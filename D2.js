@@ -4,7 +4,7 @@
 
 console.log("ESERCIZIO 1");
 
-const n1 = 35;
+const n1 = 5;
 const n2 = 27;
 
 if (n1 > n2) {
@@ -45,6 +45,10 @@ if (n1 === 8 || n2 === 8 || n1 - n2 === 8 || n2 - n1 === 8 || n1 + n2 === 8) {
   console.log(
     "Almeno uno dei due numeri scelti ha una relazione con il numero 8"
   );
+} else {
+  console.log(
+    "Nessuno dei due numeri ha una qualche relazione con il numero 8"
+  );
 }
 
 /* ESERCIZIO 5
@@ -55,7 +59,7 @@ if (n1 === 8 || n2 === 8 || n1 - n2 === 8 || n2 - n1 === 8 || n1 + n2 === 8) {
 
 console.log("\nESERCIZIO 5");
 
-var totalShoppingCart = 68;
+var totalShoppingCart = 50;
 if (totalShoppingCart > 50) {
   console.log(
     "La sua spesa è superiore a 50€, per cui la spedizione è gratuita! L'ammontare della spesa è pari a " +
@@ -64,7 +68,11 @@ if (totalShoppingCart > 50) {
   );
 } else {
   totalShoppingCart += 10;
-  console.log("L'ammontare della spesa è pari a " + totalShoppingCart + "€");
+  console.log(
+    "Includendo la spedizione, l'ammontare della spesa è pari a " +
+      totalShoppingCart +
+      "€"
+  );
 }
 
 /* ESERCIZIO 6
@@ -84,7 +92,7 @@ if (totalShoppingCart > 50) {
 } else {
   totalShoppingCart += 10;
   console.log(
-    "Oggi è il Black Friday, le faremo uno sconto del 20%. L'ammontare della spesa è pari a " +
+    "Oggi è il Black Friday, le faremo uno sconto del 20%. Includendo la spedizione, l'ammontare della spesa è pari a " +
       totalShoppingCart +
       "€"
   );
@@ -98,50 +106,57 @@ if (totalShoppingCart > 50) {
 
 console.log("\nESERCIZIO 7");
 
-const num1 = 10;
+const num1 = 13;
 const num2 = 10;
-const num3 = 0;
+const num3 = 11;
+const sort = [];
 
-if (num1 <= num2 && num1 <= num3) {
-  console.log("Il numero più piccolo dei tre è " + num1);
+if (num1 >= num2 && num1 >= num3) {
+  sort.push(num1);
   if (num2 <= num3) {
-    console.log("Il secondo numero più piccolo è " + num2);
-    console.log("L'ultimo numero è " + num3);
+    sort.push(num3);
+    sort.push(num2);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   } else {
-    console.log("Il secondo numero più piccolo è " + num3);
-    console.log("L'ultimo numero è " + num2);
+    sort.push(num2);
+    sort.push(num3);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   }
-} else if (num2 <= num1 && num2 <= num3) {
-  console.log("Il numero più piccolo dei tre è " + num2);
+} else if (num2 >= num1 && num2 >= num3) {
+  sort.push(num2);
   if (num1 <= num3) {
-    console.log("Il secondo numero più piccolo è " + num1);
-    console.log("L'ultimo numero è " + num3);
+    sort.push(num3);
+    sort.push(num1);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   } else {
-    console.log("Il secondo numero più piccolo è " + num3);
-    console.log("L'ultimo numero è " + num1);
+    sort.push(num1);
+    sort.push(num3);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   }
 } else {
-  console.log("Il numero più piccolo dei tre è " + num3);
+  sort.push(num3);
   if (num2 <= num1) {
-    console.log("Il secondo numero più piccolo è " + num2);
-    console.log("L'ultimo numero è " + num1);
+    sort.push(num1);
+    sort.push(num2);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   } else {
-    console.log("Il secondo numero più piccolo è " + num1);
-    console.log("L'ultimo numero è " + num2);
+    sort.push(num2);
+    sort.push(num1);
+    console.log("In ordine decrescente, i tre numeri sono " + sort);
   }
 }
 
 // oppure
 
-const sort = [];
+const sort2 = [];
 
-sort.push(num1);
-sort.push(num2);
-sort.push(num3);
+sort2.push(num1);
+sort2.push(num2);
+sort2.push(num3);
 
 console.log(
-  "L'ordine dei tre numeri è il seguente (con metodo): " +
-    sort.sort((a, b) => a - b)
+  "(Con metodo) In ordine decrescente, i tre numeri sono " +
+    sort2.sort((a, b) => b - a)
 );
 
 /* ESERCIZIO 8
@@ -205,12 +220,12 @@ const me = {
   skills: ["javascript", "html", "css"],
 };
 
-me.city = "Toronto";
+me.city = "Philadelphia";
 console.log(me);
 
 //oppure
 
-me["city"] = "Philadelphia";
+me["city"] = "Toronto";
 console.log(me);
 
 /* ESERCIZIO 12
