@@ -75,6 +75,8 @@ if (totalShoppingCart > 50) {
   );
 }
 
+// Si poteva usare l'operatore ternario
+
 /* ESERCIZIO 6
   Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
@@ -110,6 +112,8 @@ const num1 = 13;
 const num2 = 10;
 const num3 = 11;
 const sort = [];
+
+// non serviva usare sort... Bastava nel messaggio metterli in ordine
 
 if (num1 >= num2 && num1 >= num3) {
   sort.push(num1);
@@ -168,6 +172,7 @@ console.log("\nESERCIZIO 8");
 const elem = "Stringa";
 
 if (typeof elem === "number") {
+  // da aggiungere: !isNaN(elem), perché NaN è considerato di tipo "number"
   console.log("Il valore fornito è un numero");
 } else {
   console.log("Il valore fornito non è un numero");
@@ -265,6 +270,14 @@ array.push(9);
 array.push(10);
 console.log(array);
 
+// altra opzione creativa:
+// allOfNumber.unshift(1);
+// allOfNumber.splice(8, 0, 2, 3, 4, 5, 6, 7, 8, 9);
+// allOfNumber.push(10);
+// console.log(allOfNumber);
+
+// soluzione easy: push(1, 2, 3, ...) > a quanto pare, funziona anche così
+
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
@@ -273,3 +286,5 @@ console.log("\nESERCIZIO 15");
 
 array.splice(9, 1, 100);
 console.log(array);
+
+// potevamo anche andare di cattiveria così: array[9] = 100
